@@ -1,0 +1,13 @@
+import React, {useState, useEffect} from 'react';
+
+const DFAOutput = ({ dfaOutput, lrParseTable }) => {
+  return (
+    <div className="output-container">
+      <h2 className="output-title">DFA and LR(0) Parse Table</h2>
+      <div dangerouslySetInnerHTML={{__html: dfaOutput}}></div>
+      <div dangerouslySetInnerHTML={{__html: lrParseTable}}></div>
+    </div>
+  );
+};
+
+export default DFAOutput;
