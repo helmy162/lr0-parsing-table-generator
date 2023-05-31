@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import GrammarInput from './components/GrammarInput';
 import DFAOutput from './components/DFAOutput';
 import { getItems, getDfaOutput, getLrPraseTable, formatLrPraseTable } from './utils/LR0';
+import TagManager from 'react-gtm-module';
 
 const App = () => {
   const [grammar, setGrammar] = useState(`E\nE->aA\nE->bB\nA->cA\nA->d\nB->cB\nB->d`);
@@ -13,6 +14,10 @@ const App = () => {
     aug_productions: [[]],
     symbols: [],
   });
+
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-K3WB5RH' });
+    }, []);
 
   useEffect(() => {
     if (grammar) initLR0Items();
