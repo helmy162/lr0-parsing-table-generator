@@ -5,7 +5,7 @@ import { getItems, getDfaOutput, getLrPraseTable, formatLrPraseTable } from './u
 import TagManager from 'react-gtm-module';
 
 const App = () => {
-  const [grammar, setGrammar] = useState(`E\nE->aA\nE->bB\nA->cA\nA->d\nB->cB\nB->d`);
+  const [grammar, setGrammar] = useState(`S\nS->A\nA->(AB)\nA->()\nB->(A)\nB->()`);
   const [dfaOutput, setDfaOutput] = useState('');
   const [lrParseTable, setLrParseTable] = useState('');
 
