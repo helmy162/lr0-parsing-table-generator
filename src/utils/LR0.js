@@ -94,7 +94,7 @@ export function getLrPraseTable(items, LR0Items) {
         }
     }
 
-    setEndAction(lrPraseTable, symbols);
+    setEndAction(lrPraseTable, symbols, LR0Items);
 
     return lrPraseTable;
 
@@ -128,7 +128,7 @@ export function getLrPraseTable(items, LR0Items) {
         return state;
     }
 
-    function setEndAction(lrPraseTable, symbols) {
+    function setEndAction(lrPraseTable, symbols, LR0Items) {
         for (var i = 0; i < lrPraseTable.length; i++) {
             for (var j = 0; j < symbols.length; j++) {
                 var symbol = symbols[j];
@@ -137,7 +137,8 @@ export function getLrPraseTable(items, LR0Items) {
                 }
             }
         }
-        lrPraseTable[1]['#'] = 'acc';
+        const end_cell = lrPraseTable[0][LR0Items.productions[0]];
+        lrPraseTable[end_cell]['#'] = 'acc';
     }
 }
 
