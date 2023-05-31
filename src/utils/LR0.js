@@ -26,7 +26,7 @@ export function getItems(LR0Items) {
 
 export function getDfaOutput(items) {
     var dfaOutput = '<div class="dfa-output">';
-    dfaOutput += '<h2>Sets of LR(0) Items</h2>';
+    dfaOutput += '<h2>Generated States: </h2>';
     dfaOutput += '<hr>';
   
     for (var i = 0; i < items.length; i++) {
