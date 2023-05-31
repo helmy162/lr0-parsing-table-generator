@@ -6,7 +6,7 @@ const DFAOutput = ({ dfaOutput, lrParseTable }) => {
       {
         dfaOutput || lrParseTable ? (
         <>
-          <h2 className="output-title">DFA and LR(0) Parse Table</h2>
+          <h2 className="output-title">DFA and LR(0) Parsing Table</h2>
           <div dangerouslySetInnerHTML={{__html: dfaOutput}}></div>
           <div dangerouslySetInnerHTML={{__html: lrParseTable}}></div>
         </>

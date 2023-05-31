@@ -80,7 +80,7 @@ const App = () => {
   return (
     <div className="container">
       <header className="header">
-        <h1 className="title">LR(0) Parse Table Generator</h1>
+        <h1 className="title">LR(0) Parsing Table Generator</h1>
       </header>
       <main className="main">
         <GrammarInput onSubmit={handleGrammarSubmit} grammar={grammar} setGrammar={setGrammar} />

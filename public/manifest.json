@@ -1,6 +1,6 @@
 {
   "short_name": "LR(0)",
-  "name": "LR(0) Parse Table Generator",
+  "name": "LR(0) Parsing Table Generator",
   "icons": [
     {
       "src": "favicon.ico",

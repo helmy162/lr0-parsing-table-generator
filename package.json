@@ -1,5 +1,5 @@
 {
-  "name": "lr0-parse-table-generator",
+  "name": "lr0-parsing-table-generator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

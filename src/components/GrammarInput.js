@@ -22,7 +22,7 @@ const GrammarInput = ({ onSubmit, grammar, setGrammar }) => {
         onChange={handleInputChange}
       ></textarea>
       <button className="input-button" type="button" onClick={handleSubmit}>
-        Get Parse Table
+        Generate Parsing Table
       </button>
     </div>
   );
