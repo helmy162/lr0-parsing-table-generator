@@ -27,7 +27,7 @@ body {
 }
 
 .container {
-  /* min-width: 800px; */
+  min-width: 800px;
   max-width: 800px;
   /* margin: 0 auto; */
   padding: 20px;
@@ -197,11 +197,11 @@ hr {
   max-width: 250px;
 }
 
-/* @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   #container-7a0147249ddd99819b23528dcaa76ee5 {
     display: none;
   }
   .app{
     flex-direction: column;
   }
-} */
+}
