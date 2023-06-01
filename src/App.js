@@ -86,43 +86,33 @@ const App = () => {
 
 
   const nativeBanner = useRef()
+  const nativeBanner2 = useRef()
 
-
-///invoke.js
+/// invoke nativeBanner
 useEffect(() => {
 if (nativeBanner.current && !nativeBanner.current.firstChild) {
     const script = document.createElement('script')
     script.async = true;
-    script.src = '//pl19592643.highrevenuegate.com/7a0147249ddd99819b23528dcaa76ee5/invoke.js';
+    script.src = '//compromiseadaptedspecialty.com/7a0147249ddd99819b23528dcaa76ee5/invoke.js';
     script.dataset.cfasync = 'false';
 
     nativeBanner.current.append(script)
 }
 }, [nativeBanner])
 
-  const banner = useRef()
 
-  const atOptions = {
-    key: 'f80b1c8c6bce64b195c2eef62b6898c5',
-    format: 'iframe',
-    height: 60,
-    width: 468,
-    params: {},
-}
 
-///invoke.js
+///invoke nativeBanner2
 useEffect(() => {
-if (banner.current && !banner.current.firstChild) {
-    const conf = document.createElement('script')
-    const script = document.createElement('script')
-    script.type = 'text/javascript'
-    script.src = `//www.profitabledisplaynetwork.com/${atOptions.key}/invoke.js`
-    conf.innerHTML = `atOptions = ${JSON.stringify(atOptions)}`
-
-    banner.current.append(conf)
-    banner.current.append(script)
-}
-}, [banner])
+  if (nativeBanner2.current && !nativeBanner2.current.firstChild) {
+      const script = document.createElement('script')
+      script.async = true;
+      script.src = '//compromiseadaptedspecialty.com/e32dfda64e2ab02e5470ec29be61adfb/invoke.js';
+      script.dataset.cfasync = 'false';
+  
+      nativeBanner2.current.append(script)
+  }
+  }, [nativeBanner2])
 
 
   return (
@@ -141,7 +131,7 @@ if (banner.current && !banner.current.firstChild) {
           <p>&copy;2023 Made with ❤️ by <a href='https://www.linkedin.com/in/helmy16/' target='_blank'> Mohamed Abdelmaksoud</a></p>
         </footer>
       </div>
-      <div className='ad-container' ref={banner}>
+      <div className='ad-container' id="container-e32dfda64e2ab02e5470ec29be61adfb" ref={nativeBanner2}>
       </div>
     </div>
   );
