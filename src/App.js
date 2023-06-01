@@ -116,7 +116,7 @@ if (banner.current && !banner.current.firstChild) {
     const conf = document.createElement('script')
     const script = document.createElement('script')
     script.type = 'text/javascript'
-    script.src = `//pl19592643.highrevenuegate.com/${atOptions.key}/invoke.js`
+    script.src = `//www.profitabledisplaynetwork.com/${atOptions.key}/invoke.js`
     conf.innerHTML = `atOptions = ${JSON.stringify(atOptions)}`
 
     banner.current.append(conf)
@@ -127,7 +127,7 @@ if (banner.current && !banner.current.firstChild) {
 
   return (
     <div className='app'>
-      <div className='ad-container' ref={nativeBanner}>
+      <div className='ad-container' id="container-7a0147249ddd99819b23528dcaa76ee5" ref={nativeBanner}>
       </div>
       <div className="container">
         <header className="header">
