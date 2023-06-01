@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import GrammarInput from './components/GrammarInput';
 import DFAOutput from './components/DFAOutput';
 import { getItems, getDfaOutput, getLrPraseTable, formatLrPraseTable } from './utils/LR0';
 import TagManager from 'react-gtm-module';
-import {Helmet} from "react-helmet";
-
 
 const App = () => {
   const [grammar, setGrammar] = useState(`S\nS->A\nA->(AB)\nA->()\nB->(A)\nB->()`);
@@ -84,55 +82,18 @@ const App = () => {
     setLrParseTable(lrPraseTableString);
   };
 
-
-  const nativeBanner = useRef()
-  const nativeBanner2 = useRef()
-
-/// invoke nativeBanner
-useEffect(() => {
-if (nativeBanner.current && !nativeBanner.current.firstChild) {
-    const script = document.createElement('script')
-    script.async = true;
-    script.src = '//compromiseadaptedspecialty.com/7a0147249ddd99819b23528dcaa76ee5/invoke.js';
-    script.dataset.cfasync = 'false';
-
-    nativeBanner.current.append(script)
-}
-}, [nativeBanner])
-
-
-
-///invoke nativeBanner2
-useEffect(() => {
-  if (nativeBanner2.current && !nativeBanner2.current.firstChild) {
-      const script = document.createElement('script')
-      script.async = true;
-      script.src = '//compromiseadaptedspecialty.com/e32dfda64e2ab02e5470ec29be61adfb/invoke.js';
-      script.dataset.cfasync = 'false';
-  
-      nativeBanner2.current.append(script)
-  }
-  }, [nativeBanner2])
-
-
   return (
-    <div className='app'>
-      <div className='ad-container' id="container-7a0147249ddd99819b23528dcaa76ee5" ref={nativeBanner}>
-      </div>
-      <div className="container">
-        <header className="header">
-          <h1 className="title">LR(0) Parsing Table Generator</h1>
-        </header>
-        <main className="main">
-          <GrammarInput onSubmit={handleGrammarSubmit} grammar={grammar} setGrammar={setGrammar} />
-          <DFAOutput dfaOutput={dfaOutput} lrParseTable={lrParseTable} />
-        </main>
-        <footer className="footer">
-          <p>&copy;2023 Made with ❤️ by <a href='https://www.linkedin.com/in/helmy16/' target='_blank'> Mohamed Abdelmaksoud</a></p>
-        </footer>
-      </div>
-      <div className='ad-container' id="container-e32dfda64e2ab02e5470ec29be61adfb" ref={nativeBanner2}>
-      </div>
+    <div className="container">
+      <header className="header">
+        <h1 className="title">LR(0) Parsing Table Generator</h1>
+      </header>
+      <main className="main">
+        <GrammarInput onSubmit={handleGrammarSubmit} grammar={grammar} setGrammar={setGrammar} />
+        <DFAOutput dfaOutput={dfaOutput} lrParseTable={lrParseTable} />
+      </main>
+      <footer className="footer">
+        <p>&copy;2023 Made with ❤️ by <a href='https://www.linkedin.com/in/helmy16/' target='_blank'> Mohamed Abdelmaksoud</a></p>
+      </footer>
     </div>
   );
 };
