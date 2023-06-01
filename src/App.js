@@ -84,9 +84,21 @@ const App = () => {
     setLrParseTable(lrPraseTableString);
   };
 
-  useEffect(() => {
-    document.getElementById('container-7a0147249ddd99819b23528dcaa76ee5')?.reload()
-  }, []);
+
+  const nativeBanner = useRef()
+
+
+///invoke.js
+useEffect(() => {
+if (nativeBanner.current && !nativeBanner.current.firstChild) {
+    const script = document.createElement('script')
+    script.async = true;
+    script.src = '//pl19592643.highrevenuegate.com/7a0147249ddd99819b23528dcaa76ee5/invoke.js';
+    script.dataset.cfasync = 'false';
+
+    nativeBanner.current.append(script)
+}
+}, [nativeBanner])
 
   const banner = useRef()
 
@@ -104,7 +116,7 @@ if (banner.current && !banner.current.firstChild) {
     const conf = document.createElement('script')
     const script = document.createElement('script')
     script.type = 'text/javascript'
-    script.src = `//www.profitabledisplaynetwork.com/${atOptions.key}/invoke.js`
+    script.src = `//pl19592643.highrevenuegate.com/${atOptions.key}/invoke.js`
     conf.innerHTML = `atOptions = ${JSON.stringify(atOptions)}`
 
     banner.current.append(conf)
@@ -115,7 +127,7 @@ if (banner.current && !banner.current.firstChild) {
 
   return (
     <div className='app'>
-      <div className='ad-container' ref={banner}>
+      <div className='ad-container' ref={nativeBanner}>
       </div>
       <div className="container">
         <header className="header">
@@ -129,8 +141,7 @@ if (banner.current && !banner.current.firstChild) {
           <p>&copy;2023 Made with ❤️ by <a href='https://www.linkedin.com/in/helmy16/' target='_blank'> Mohamed Abdelmaksoud</a></p>
         </footer>
       </div>
-      <div className='ad-container'>
-        Image
+      <div className='ad-container' ref={banner}>
       </div>
     </div>
   );
