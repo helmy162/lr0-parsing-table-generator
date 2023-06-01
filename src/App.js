@@ -3,6 +3,8 @@ import GrammarInput from './components/GrammarInput';
 import DFAOutput from './components/DFAOutput';
 import { getItems, getDfaOutput, getLrPraseTable, formatLrPraseTable } from './utils/LR0';
 import TagManager from 'react-gtm-module';
+import {Helmet} from "react-helmet";
+
 
 const App = () => {
   const [grammar, setGrammar] = useState(`S\nS->A\nA->(AB)\nA->()\nB->(A)\nB->()`);
@@ -83,17 +85,28 @@ const App = () => {
   };
 
   return (
-    <div className="container">
-      <header className="header">
-        <h1 className="title">LR(0) Parsing Table Generator</h1>
-      </header>
-      <main className="main">
-        <GrammarInput onSubmit={handleGrammarSubmit} grammar={grammar} setGrammar={setGrammar} />
-        <DFAOutput dfaOutput={dfaOutput} lrParseTable={lrParseTable} />
-      </main>
-      <footer className="footer">
-        <p>&copy;2023 Made with ❤️ by <a href='https://www.linkedin.com/in/helmy16/' target='_blank'> Mohamed Abdelmaksoud</a></p>
-      </footer>
+    <div className='app'>
+      <div className='ad-container'>
+        <Helmet>
+        <script async="async" data-cfasync="false" src="//pl19592643.highrevenuegate.com/7a0147249ddd99819b23528dcaa76ee5/invoke.js"></script>
+        <div id="container-7a0147249ddd99819b23528dcaa76ee5"></div>
+        </Helmet>
+      </div>
+      <div className="container">
+        <header className="header">
+          <h1 className="title">LR(0) Parsing Table Generator</h1>
+        </header>
+        <main className="main">
+          <GrammarInput onSubmit={handleGrammarSubmit} grammar={grammar} setGrammar={setGrammar} />
+          <DFAOutput dfaOutput={dfaOutput} lrParseTable={lrParseTable} />
+        </main>
+        <footer className="footer">
+          <p>&copy;2023 Made with ❤️ by <a href='https://www.linkedin.com/in/helmy16/' target='_blank'> Mohamed Abdelmaksoud</a></p>
+        </footer>
+      </div>
+      <div className='ad-container'>
+        Image
+      </div>
     </div>
   );
 };
