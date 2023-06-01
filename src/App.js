@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import GrammarInput from './components/GrammarInput';
 import DFAOutput from './components/DFAOutput';
 import { getItems, getDfaOutput, getLrPraseTable, formatLrPraseTable } from './utils/LR0';
@@ -84,13 +84,38 @@ const App = () => {
     setLrParseTable(lrPraseTableString);
   };
 
+  useEffect(() => {
+    document.getElementById('container-7a0147249ddd99819b23528dcaa76ee5')?.reload()
+  }, []);
+
+  const banner = useRef()
+
+  const atOptions = {
+    key: 'f80b1c8c6bce64b195c2eef62b6898c5',
+    format: 'iframe',
+    height: 60,
+    width: 468,
+    params: {},
+}
+
+///invoke.js
+useEffect(() => {
+if (banner.current && !banner.current.firstChild) {
+    const conf = document.createElement('script')
+    const script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.src = `//www.profitabledisplaynetwork.com/${atOptions.key}/invoke.js`
+    conf.innerHTML = `atOptions = ${JSON.stringify(atOptions)}`
+
+    banner.current.append(conf)
+    banner.current.append(script)
+}
+}, [banner])
+
+
   return (
     <div className='app'>
-      <div className='ad-container'>
-        <Helmet>
-        <script async="async" data-cfasync="false" src="//pl19592643.highrevenuegate.com/7a0147249ddd99819b23528dcaa76ee5/invoke.js"></script>
-        <div id="container-7a0147249ddd99819b23528dcaa76ee5"></div>
-        </Helmet>
+      <div className='ad-container' ref={banner}>
       </div>
       <div className="container">
         <header className="header">
