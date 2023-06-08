@@ -1,11 +1,18 @@
 import React from 'react';
 
-const SentenceOutput = ({ sentenceOutput }) => {
+const SentenceOutput = ({ praseSentence }) => {
   return (
-    <div>
-      <p>The parsing process:</p>
-      <textarea id="sentence-output" name="" rows="30" cols="55" value={sentenceOutput} readOnly></textarea>
-    </div>
+    <div className="output-container">
+    {
+      praseSentence ? (
+      <>
+        <h2 className="output-title">Parse Result:</h2>
+        {praseSentence}
+      </>
+      ) : null
+    }
+    
+  </div>
   );
 };
 

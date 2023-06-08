@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import GrammarInput from './components/GrammarInput';
 import DFAOutput from './components/DFAOutput';
+import SentenceInput from './components/SentenceInput';
 import { getItems, getDfaOutput, getLrPraseTable, formatLrPraseTable } from './utils/LR0';
+import {getParseOutput} from './utils/parser';
 import TagManager from 'react-gtm-module';
+import SentenceOutput from './components/SentenceOutput';
+import DFAVisualization from './components/DFAVisualization';
 
 const App = () => {
   const [grammar, setGrammar] = useState(`S\nS->A\nA->(AB)\nA->()\nB->(A)\nB->()`);
   const [dfaOutput, setDfaOutput] = useState('');
+  const [dfaResult, setDfaResult] = useState('');
   const [lrParseTable, setLrParseTable] = useState('');
+  const [lrParseTableRaw, setlrParseTableRaw] = useState('');
+  const [sentence, setSentence] = useState('');
+  const [praseSentence, setPraseSentence] = useState('');
 
   const [LR0Items, setLR0Items] = useState({
     productions: [],
@@ -73,14 +81,24 @@ const App = () => {
   const handleGrammarSubmit = (grammar) => {
     initLR0Items(LR0Items, grammar);
     var grammer = getAugmentedGrammar(LR0Items);
-    console.log(grammer);
     var resultItems = getItems(LR0Items);
     var dfaOutput = getDfaOutput(resultItems);
     var lrPraseTable = getLrPraseTable(resultItems, LR0Items);
+    setlrParseTableRaw(lrPraseTable);
     var lrPraseTableString = formatLrPraseTable(lrPraseTable, LR0Items);
+    setDfaResult(resultItems);
     setDfaOutput(dfaOutput);
     setLrParseTable(lrPraseTableString);
   };
+
+  const handleSentenceSubmit = (sentence) => {
+    if(!lrParseTable) {
+      alert('Please enter a valid grammar first!');
+      return;
+    }
+    const praseSentenceOutput = getParseOutput(sentence, lrParseTableRaw, LR0Items.aug_productions);
+    setPraseSentence(praseSentenceOutput);
+  }
 
   return (
     <div className="container">
@@ -89,7 +107,12 @@ const App = () => {
       </header>
       <main className="main">
         <GrammarInput onSubmit={handleGrammarSubmit} grammar={grammar} setGrammar={setGrammar} />
+        {dfaResult && <DFAVisualization dfaObject={dfaResult} />}
         <DFAOutput dfaOutput={dfaOutput} lrParseTable={lrParseTable} />
+        {
+          dfaOutput &&  <> <hr className="divider" /> <SentenceInput onParse={handleSentenceSubmit} sentence={sentence} setSentence={setSentence}/> </>
+        }
+        <SentenceOutput praseSentence={praseSentence} />
       </main>
       <footer className="footer">
         <p>&copy;2023 Made with ❤️ by <a href='https://www.linkedin.com/in/helmy16/' target='_blank'> Mohamed Abdelmaksoud</a></p>

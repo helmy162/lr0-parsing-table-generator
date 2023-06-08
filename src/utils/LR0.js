@@ -133,12 +133,12 @@ export function getLrPraseTable(items, LR0Items) {
             for (var j = 0; j < symbols.length; j++) {
                 var symbol = symbols[j];
                 if (/[0-9+\-*/()a-z]/.test(symbol) && lrPraseTable[i][symbol] && lrPraseTable[i][symbol].isProduction) {
-                    lrPraseTable[i]['#'] = lrPraseTable[i][symbol];
+                    lrPraseTable[i]['$'] = lrPraseTable[i][symbol];
                 }
             }
         }
         const end_cell = lrPraseTable[0][LR0Items.productions[0]];
-        lrPraseTable[end_cell]['#'] = 'acc';
+        lrPraseTable[end_cell]['$'] = 'acc';
     }
 }
 
@@ -163,7 +163,7 @@ export function formatLrPraseTable(lrPraseTable, LR0Items) {
         lrPraseTableString += '<div class="table-cell">' + symbols[i] + '</div>';
       }
     }
-    lrPraseTableString += '<div class="table-cell">#</div>';
+    lrPraseTableString += '<div class="table-cell">$</div>';
     for (i = 0; i < symbols.length; i++) {
       if (/[A-Z]/.test(symbols[i])) {
         lrPraseTableString += '<div class="table-cell">' + symbols[i] + '</div>';
@@ -192,12 +192,12 @@ export function formatLrPraseTable(lrPraseTable, LR0Items) {
         }
       }
   
-      if (lrPraseTable[i]['#'] === undefined) {
+      if (lrPraseTable[i]['$'] === undefined) {
         lrPraseTableString += '<div class="table-cell"></div>';
-      } else if (lrPraseTable[i]['#'] === 'acc') {
+      } else if (lrPraseTable[i]['$'] === 'acc') {
         lrPraseTableString += '<div class="table-cell action-accept">acc</div>';
-      } else if (lrPraseTable[i]['#'].isProduction === true) {
-        lrPraseTableString += '<div class="table-cell action-production">r' + lrPraseTable[i]['#'].value + '</div>';
+      } else if (lrPraseTable[i]['$'].isProduction === true) {
+        lrPraseTableString += '<div class="table-cell action-production">r' + lrPraseTable[i]['$'].value + '</div>';
       }
   
       for (j = 0; j < symbols.length; j++) {

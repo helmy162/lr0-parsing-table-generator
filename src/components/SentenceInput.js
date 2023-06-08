@@ -1,30 +1,37 @@
 import React, { useState } from 'react';
 
-const SentenceInput = ({ onParse }) => {
-  const [sentence, setSentence] = useState('');
+const SentenceInput = ({ onParse, sentence, setSentence }) => {
 
   const handleInputChange = (e) => {
     setSentence(e.target.value);
   };
 
   const handleSubmit = () => {
-    onParse(sentence);
+    if(sentence.slice(-1) !== '$') onParse(sentence + '$');
+    else onParse(sentence);
   };
 
   return (
-    <div>
-      <p>Please enter a sentence:</p>
+    <>
+   <h1 className="title header" >Parse Sentence</h1>
+    <div className="input-container">
+      <h2 className="input-title">Please enter a sentence:</h2>
       <input
-        id="input-sentence"
-        type="text"
+        className="input-textarea"
+        id="input-grammar"
         name=""
+        rows="10"
+        cols="30"
+        placeholder='abcd$'
         value={sentence}
         onChange={handleInputChange}
-      />
-      <button type="button" onClick={handleSubmit}>
-        Submit Input
+      ></input>
+      <button className="input-button" type="submit" onClick={handleSubmit}>
+        Parse Sentence
       </button>
-    </div>
+  </div>
+   </>
+
   );
 };
 
