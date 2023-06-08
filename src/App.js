@@ -115,7 +115,7 @@ const App = () => {
         <SentenceOutput praseSentence={praseSentence} />
       </main>
       <footer className="footer">
-        <p>&copy;2023 Made with ❤️ by <a href='https://www.linkedin.com/in/helmy16/' target='_blank'> Mohamed Abdelmaksoud</a></p>
+        <p>&copy;2023 Made with ❤️ by <a href='https://www.linkedin.com/in/helmy16/' target='_blank'> Mohamed Abdelmaksoud</a> & <a href='https://www.linkedin.com/in/mohamed-gira-604a4b209/' target='_blank'> Mohamed Gira</a></p>
       </footer>
     </div>
   );
