@@ -11,9 +11,12 @@ const GrammarInput = ({ onSubmit, grammar, setGrammar }) => {
 
   return (
     <div className="input-container">
-      <h2 className="input-title">Enter Grammar</h2>
+      <label htmlFor="input-grammar">
+        <h2 className="input-title">Enter Grammar</h2>
+      </label>
       <textarea
         className="input-textarea"
+        label="Grammar"
         id="input-grammar"
         name=""
         rows="10"

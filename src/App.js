@@ -103,7 +103,11 @@ const App = () => {
   return (
     <div className="container">
       <header className="header">
-        <h1 className="title">LR(0) Parsing Table Generator</h1>
+        <h1 className="title">LR(0) Parser</h1>
+        <p className="description">
+          LR(0) Parser is a tool that visualizes the DFA and LR(0) table, making it easy to understand the parsing process. Create and analyze LR(0) items, explore augmented grammars, and generate parse tables effortlessly.
+        </p>
+
       </header>
       <main className="main">
         <GrammarInput onSubmit={handleGrammarSubmit} grammar={grammar} setGrammar={setGrammar} />
