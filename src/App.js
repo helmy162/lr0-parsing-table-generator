@@ -103,11 +103,11 @@ const App = () => {
   return (
     <div className="container">
       <header className="header">
-        <h1 className="title">LR(0) Parser</h1>
+        <img src='./logo.png' alt='LR(0) Parser' className='title' width='250' height='110'/>
+        <h3>Description</h3>
         <p className="description">
           LR(0) Parser is a tool that visualizes the DFA and LR(0) table, making it easy to understand the parsing process. Create and analyze LR(0) items, explore augmented grammars, and generate parse tables effortlessly.
         </p>
-
       </header>
       <main className="main">
         <GrammarInput onSubmit={handleGrammarSubmit} grammar={grammar} setGrammar={setGrammar} />
@@ -118,8 +118,18 @@ const App = () => {
         }
         <SentenceOutput praseSentence={praseSentence} />
       </main>
+      <div className="instruction-section">
+        <h3>Instructions</h3>
+        <ol>
+          <li>The first line shall contain the start non-terminal only. </li>
+          <li>Separate production rule with a new line.</li>
+          <li>DO NOT separate tokens with whitespaces.</li>
+          <li>DO NOT ADD the end-of-input symbol ($). </li>
+          <li>DO NOT add augmented grammar. </li>
+        </ol>
+      </div>
       <footer className="footer">
-        <p>&copy;2023 Made with ❤️ by <a href='https://www.linkedin.com/in/helmy16/' target='_blank'> Mohamed Abdelmaksoud</a> & <a href='https://www.linkedin.com/in/mohamed-gira-604a4b209/' target='_blank'> Mohamed Gira</a></p>
+        <p>&copy;2023 Made with ❤️ by <a href='https://www.linkedin.com/in/helmy16/' target='_blank'> Mohamed Abdelmaksoud</a></p>
       </footer>
     </div>
   );
