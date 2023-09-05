@@ -52,8 +52,20 @@ body {
 }
 
 .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
   text-align: center;
   margin-top: 20px;
+}
+
+.terms{
+  display: flex;
+  gap: 10px;
+}
+
+.terms a {
+  color: #797777;
 }
 
 .input-container {

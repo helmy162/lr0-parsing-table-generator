@@ -129,6 +129,10 @@ const App = () => {
         </ol>
       </div>
       <footer className="footer">
+        <div className='terms'>
+          <a href='https://www.privacypolicyonline.com/live.php?token=NfmLYvy6ESw7UEthlnJmtWeFYLYx61Kd' target='__blank'> Terms and Conditions </a> 
+          <a href='https://www.privacypolicyonline.com/live.php?token=EVvnVZTIhZ4P36LloGH3L5FRWuFrqh1Q' target='__blank'> Privacy Policy </a> 
+        </div>
         <p>&copy;2023 Made with ❤️ by <a href='https://www.linkedin.com/in/helmy16/' target='_blank'> Mohamed Abdelmaksoud</a></p>
       </footer>
     </div>
