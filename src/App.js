@@ -134,6 +134,11 @@ const App = () => {
           <a href='https://www.privacypolicyonline.com/live.php?token=EVvnVZTIhZ4P36LloGH3L5FRWuFrqh1Q' target='__blank'> Privacy Policy </a> 
         </div>
         <p>&copy;2023 Made with ❤️ by <a href='https://www.linkedin.com/in/helmy16/' target='_blank'> Mohamed Abdelmaksoud</a></p>
+        <div style={{width: '100%'}}>Found this helpful ? Support me by {' '}
+          <a href='https://www.buymeacoffee.com/helmy16' target='_blank'>
+            Buying me a coffee
+          </a>
+        </div>
       </footer>
     </div>
   );
