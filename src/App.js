@@ -13,6 +13,7 @@ import TagManager from "react-gtm-module";
 import SentenceOutput from "./components/SentenceOutput";
 import DFAVisualization from "./components/DFAVisualization";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
   const [grammar, setGrammar] = useState(
@@ -195,6 +196,7 @@ const App = () => {
         </footer>
       </div>
       <SpeedInsights />
+      <Analytics />
     </>
   );
 };
