@@ -12,6 +12,7 @@ import { getParseOutput } from "./utils/parser";
 import TagManager from "react-gtm-module";
 import SentenceOutput from "./components/SentenceOutput";
 import DFAVisualization from "./components/DFAVisualization";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const App = () => {
   const [grammar, setGrammar] = useState(
@@ -112,86 +113,89 @@ const App = () => {
   };
 
   return (
-    <div className="container">
-      <header className="header">
-        <img
-          src="./logo.png"
-          alt="LR(0) Parser"
-          className="title"
-          width="250"
-          height="110"
-        />
-        <h3>Description</h3>
-        <p className="description">
-          LR(0) Parser is a tool that visualizes the DFA and LR(0) table, making
-          it easy to understand the parsing process. Create and analyze LR(0)
-          items, explore augmented grammars, and generate parse tables
-          effortlessly.
-        </p>
-      </header>
-      <main className="main">
-        <GrammarInput
-          onSubmit={handleGrammarSubmit}
-          grammar={grammar}
-          setGrammar={setGrammar}
-        />
-        {dfaResult && <DFAVisualization dfaObject={dfaResult} />}
-        <DFAOutput dfaOutput={dfaOutput} lrParseTable={lrParseTable} />
-        {dfaOutput && (
-          <>
-            {" "}
-            <hr className="divider" />{" "}
-            <SentenceInput
-              onParse={handleSentenceSubmit}
-              sentence={sentence}
-              setSentence={setSentence}
-            />{" "}
-          </>
-        )}
-        <SentenceOutput praseSentence={praseSentence} />
-      </main>
-      <div className="instruction-section">
-        <h3>Instructions</h3>
-        <ol>
-          <li>The first line shall contain the start non-terminal only. </li>
-          <li>Separate production rule with a new line.</li>
-          <li>DO NOT separate tokens with whitespaces.</li>
-          <li>DO NOT ADD the end-of-input symbol ($). </li>
-          <li>DO NOT add augmented grammar. </li>
-        </ol>
+    <>
+      <div className="container">
+        <header className="header">
+          <img
+            src="./logo.png"
+            alt="LR(0) Parser"
+            className="title"
+            width="250"
+            height="110"
+          />
+          <h3>Description</h3>
+          <p className="description">
+            LR(0) Parser is a tool that visualizes the DFA and LR(0) table,
+            making it easy to understand the parsing process. Create and analyze
+            LR(0) items, explore augmented grammars, and generate parse tables
+            effortlessly.
+          </p>
+        </header>
+        <main className="main">
+          <GrammarInput
+            onSubmit={handleGrammarSubmit}
+            grammar={grammar}
+            setGrammar={setGrammar}
+          />
+          {dfaResult && <DFAVisualization dfaObject={dfaResult} />}
+          <DFAOutput dfaOutput={dfaOutput} lrParseTable={lrParseTable} />
+          {dfaOutput && (
+            <>
+              {" "}
+              <hr className="divider" />{" "}
+              <SentenceInput
+                onParse={handleSentenceSubmit}
+                sentence={sentence}
+                setSentence={setSentence}
+              />{" "}
+            </>
+          )}
+          <SentenceOutput praseSentence={praseSentence} />
+        </main>
+        <div className="instruction-section">
+          <h3>Instructions</h3>
+          <ol>
+            <li>The first line shall contain the start non-terminal only. </li>
+            <li>Separate production rule with a new line.</li>
+            <li>DO NOT separate tokens with whitespaces.</li>
+            <li>DO NOT ADD the end-of-input symbol ($). </li>
+            <li>DO NOT add augmented grammar. </li>
+          </ol>
+        </div>
+        <footer className="footer">
+          <div className="terms">
+            <a
+              href="https://www.privacypolicyonline.com/live.php?token=NfmLYvy6ESw7UEthlnJmtWeFYLYx61Kd"
+              target="__blank"
+            >
+              {" "}
+              Terms and Conditions{" "}
+            </a>
+            <a
+              href="https://www.privacypolicyonline.com/live.php?token=EVvnVZTIhZ4P36LloGH3L5FRWuFrqh1Q"
+              target="__blank"
+            >
+              {" "}
+              Privacy Policy{" "}
+            </a>
+          </div>
+          <p>
+            &copy;2023 Made with ❤️ by{" "}
+            <a href="https://www.linkedin.com/in/helmy16/" target="_blank">
+              {" "}
+              Mohamed Abdelmaksoud
+            </a>
+          </p>
+          <div style={{ width: "100%" }}>
+            Found this helpful ? Support me by{" "}
+            <a href="https://www.buymeacoffee.com/helmy16" target="_blank">
+              Buying me a coffee
+            </a>
+          </div>
+        </footer>
       </div>
-      <footer className="footer">
-        <div className="terms">
-          <a
-            href="https://www.privacypolicyonline.com/live.php?token=NfmLYvy6ESw7UEthlnJmtWeFYLYx61Kd"
-            target="__blank"
-          >
-            {" "}
-            Terms and Conditions{" "}
-          </a>
-          <a
-            href="https://www.privacypolicyonline.com/live.php?token=EVvnVZTIhZ4P36LloGH3L5FRWuFrqh1Q"
-            target="__blank"
-          >
-            {" "}
-            Privacy Policy{" "}
-          </a>
-        </div>
-        <p>
-          &copy;2023 Made with ❤️ by{" "}
-          <a href="https://www.linkedin.com/in/helmy16/" target="_blank">
-            {" "}
-            Mohamed Abdelmaksoud
-          </a>
-        </p>
-        <div style={{ width: "100%" }}>
-          Found this helpful ? Support me by{" "}
-          <a href="https://www.buymeacoffee.com/helmy16" target="_blank">
-            Buying me a coffee
-          </a>
-        </div>
-      </footer>
-    </div>
+      <SpeedInsights />
+    </>
   );
 };
 
